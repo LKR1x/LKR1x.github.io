@@ -118,7 +118,7 @@ const MainPageContent = () => {
   // Return JSX for the main page content ONLY
   return (
     <> 
-      {/*<Preloader />*/}
+      <Preloader />
       {/* Use Fragment to avoid extra div */}
       {/* --- Original Animated Title --- */}
       <div className="relative overflow-hidden w-full h-[19vw] mb-20" >
