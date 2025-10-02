@@ -23,7 +23,7 @@ function Preloader() {
         <div className="fixed top-0 left-0 right-0 bottom-0 bg-black z-50 flex justify-center items-center">
             <div className="flex justify-center items-center">
                 <img
-                    src="/images/preload.gif" // Ensure this path is correct!
+                    src="/images/preload.webp" // Ensure this path is correct!
                     alt="Loading..."
                     className="max-w-full max-h-full"
                     style={{ maxWidth: '240px', maxHeight: '135px' }} // Adjust size as needed
