@@ -89,9 +89,9 @@ const Footer = () => {
           </nav>
         </div>
 
-        {/* Bottom - Copyright (Keep as is) */}
+
         <div className="text-center text-xs text-zinc-500 mt-10">
-          © {new Date().getFullYear()} My skills on display, built with pride 💚
+          © {new Date().getFullYear()} Lakruwan – Crafted with 💚
         </div>
       </footer>
     </>

@@ -6,56 +6,48 @@ image: "/projects/images/ytcard.webp"
 date: "2024-02-10"
 ---
 
-
-## Overview:
-
-As a self-initiated project, I redesigned YouTube Music’s homepage and few components to enhance usability, navigation, and content organization. My goal was to create a more intuitive experience while maintaining YouTube’s design language.
-
----
-
-## Problem Statement:
-
-YouTube Music’s homepage can feel cluttered, and its content organization lacks clear categorization. Additionally, the player and search experience could be more seamless.
+I use YouTube Music a lot. I feel the homepage is sometimes messy. It is hard to find the right songs because things are not in clear groups. The music player and the search bar also can be better and more easy to use. I think many users feel this way.
 
 ![](/projects/images/ytmusicredesign/yt1.webp)
-
 ![](/projects/images/ytmusicredesign/yt2.webp)
-
 ![](/projects/images/ytmusicredesign/yt3.webp)
 
 ---
 
-## Wireframing & Prototyping:
+## My Goal
 
-Using Adobe XD, I created wireframes to visualize my ideas for the new layout. The mini player design was created to be small but functional, allowing users to access essential controls easily.
+My idea for this personal project was simple. I wanted to make the YouTube Music experience cleaner and more intuitive. My main goals were:
+* Make the homepage look less cluttered and more organized.
+* Help users find their playlists and songs faster.
+* Design a better music player and search function.
+* Keep the YouTube style, so it still feels familiar.
+
+---
+
+## My Process and Design Decisions
+
+I started by thinking about the main problems. Then, I used **Adobe XD** to make some simple wireframes to see my ideas.
 
 ![](/projects/images/ytmusicredesign/wireframe1.webp)
 ![](/projects/images/ytmusicredesign/wireframe2.webp)
 
----
+Here are the main design choices I made and why:
 
-## Key Features:
-
-**Sidebar with Playlist Icons**: Quick access to saved playlists, artists, and songs.\
-**Expanding Music Player**: A new Spotify-style player for immersive playback.\
-**Categorized Playlists**: Songs are now neatly grouped into Playlists, Artists, and Music.\
-**Expanding Search Bar**: Clean, adaptive search UX for faster music discovery.
+* **New Sidebar:** I added a sidebar with simple icons. **Why?** To give users a very quick way to get to their favorite playlists, artists, and songs without searching a lot.
+* **Better Music Player:** I designed a new music player that can expand, like on Spotify. **Why?** The big player helps you focus on the music. I also made a mini-player that is small but has all the controls. It's good for when you are browsing for other music.
+* **Clear Categories:** I grouped music into "Playlists," "Artists," and "Music." **Why?** Before, it was all mixed up. Now, it is very easy to find what you want to listen to.
+* **Expanding Search Bar:** The search bar is small first, and gets bigger when you click it. **Why?** This saves space and makes the page look cleaner. You only need a big search bar when you are typing.
 
 ![](/projects/images/ytmusicredesign/ss4.webp)
 
 ---
 
-## Final Design:
+## The Final Solution
 
-The final design includes the mini player, enhanced layout, and optimized visual hierarchy, resulting in a smoother and more enjoyable user experience.
+The final design brings all these ideas together. The new layout is cleaner and the visual hierarchy is better. The mini-player works well, and the whole experience feels more smooth and fun for the user. I believe this redesign solves the first problems of clutter and makes finding music much easier.
 
-🎬 [Click here to watch the demo video](./projects/images/ytmusicredesign/ytmusic.mp4)
-
-
+🎬 [Watch the demo video](./projects/images/ytmusicredesign/ytmusic.mp4)
 
 ![](/projects/images/ytmusicredesign/ss1.webp)
-
 ![](/projects/images/ytmusicredesign/ss2.webp)
-
 ![](/projects/images/ytmusicredesign/ss3.webp)
-

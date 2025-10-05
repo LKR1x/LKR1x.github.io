@@ -1,63 +1,72 @@
 [
+
     {
       "type": "image",
-      "imagePath": "/playground/images/btn-white.webp",
-      "description": "UI component Made using Figma",
-      "alt": "btn ui component"
+      "imagePath": "/playground/images/nextmind.webp",
+      "description": "Vite + Tailwind CSS landingpage",
+      "alt": "website"
     },
+    {
+      "type": "image",
+      "imagePath": "/playground/images/designportfolio.webp",
+      "description": "Vite + CSS portfolio website",
+      "alt": "website"
+    },
+    {
+      "type": "image",
+      "imagePath": "/playground/images/pebbleai.webp",
+      "description": "Vite + Rive animation Landing page",
+      "alt": "website"
+    },    
+    {
+      "type": "image",
+      "imagePath": "/playground/images/deshire.webp",
+      "description": "Hiring Website UI made using Adobe XD",
+      "alt": "web UI"
+    }, 
+   
+    {
+      "type": "image",
+      "imagePath": "/playground/images/xpace.webp",
+      "description": "XPACE logo Design Adobe Illustrator",
+      "alt": "logo design"
+    },
+    {
+      "type": "image",
+      "imagePath": "/playground/images/bladebloom.webp",
+      "description": "Vite + Framer motion + Tailwind CSS landingpage",
+      "alt": "website"
+    },
+
     {
       "type": "video",
       "videoPath": "/playground/videos/godotplatformer.webm",
-      "description": "Platformer game level made using Godot Engine,All the Assets are made by me",
+      "description": "Platformer game level made using Godot Engine and Aseprite",
       "alt": "Godot Platformer gamer"
     },
     {
       "type": "image",
-      "imagePath": "/playground/images/purplechanger.webp",
-      "description": "UI component Made using Figma",
-      "alt": "ui component"
-    },
-    {
-      "type": "image",
       "imagePath": "/playground/images/weapondesign.webp",
-      "description": "Sci-Fi Gun Model, Blender 3D #EVEE",
+      "description": "Sci-Fi Weapon Design, Blender 3D #EVEE",
       "alt": "scifi gun model"
     },    
     {
-      "type": "video",
-      "videoPath": "/playground/videos/flyingsubmarine.webm",
-      "description": "Animated Videoclip Made using Blender 3D. #CYCLES",
-      "alt": "Blender animation video"
+      "type": "image",
+      "imagePath": "/playground/images/girlcharacterdesign.webp",
+      "description": "Character Design in Adobe Illustrator ",
+      "alt": "Girl head character design"
     },
     {
       "type": "image",
-      "imagePath": "/playground/images/yakacard.webp",
-      "description": "UI component Made using Figma",
-      "alt": "UI card design"
-    }, 
-    {
-      "type": "image",
-      "imagePath": "/playground/images/girlcharacterdesign.webp",
-      "description": "Character Design of a girl made using Adobe Illustrator ",
-      "alt": "Girl head character design"
+      "imagePath": "/playground/images/portfolioanime.webp",
+      "description": "Vite + CSS Portfolio",
+      "alt": "website"
     },    
     {
       "type": "image",
-      "imagePath": "/playground/images/duckillustrator.webp",
-      "description": "Duck made using Adobe Illustrator",
-      "alt": "Duck made in Adobe illustrator"
-    },
-    {
-      "type": "image",
-      "imagePath": "/playground/images/enderbattotem.webp",
-      "description": "Minecraft Totem Resources Pack, 1K+ Downloads",
-      "alt": "Minecraft Totem Design"
-    },
-    {
-      "type": "image",
-      "imagePath": "/playground/images/aliensculpture.webp",
-      "description": "Alien Sculpture , Blender 3D",
-      "alt": "Alien Sculpture"
+      "imagePath": "/playground/images/1musicthumbnail.webp",
+      "description": "UI design for 1music app",
+      "alt": "thumbnail design for 1music"
     },
     {
       "type": "image",
@@ -68,21 +77,8 @@
     {
       "type": "image",
       "imagePath": "/playground/images/blenderanimals.webp",
-      "description": "Sci-Fi Creature pack, Blender 3D",
+      "description": "Sci-Fi Creature pack Made using Blender 3D",
       "alt": "Scifi creatures"
-    },
-    {
-      "type": "image",
-      "imagePath": "/playground/images/navmenu.webp",
-      "description": "UI component Made using Figma",
-      "alt": "navbar UI"
-    },
-    {
-      "type": "video",
-      "videoPath": "/playground/videos/solarsystemcss.webm",
-      "description": "Expading Solarsystem animation made using CSS only.",
-      "alt": "CSS solar system Animation"
     }
-
 
   ]

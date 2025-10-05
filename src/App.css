@@ -6,8 +6,13 @@
   font-family: 'Geist Mono', monospace;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 /* Creativity Title Styling */
@@ -66,17 +71,76 @@ html {
   text-fill-color: transparent;
 }
 
+
 .gradient-text {
-  background: linear-gradient(to right, #1bb43f, #02c8ff); /* Example gradient */
-  -webkit-background-clip: text; /* For older browsers */
+  background: linear-gradient(90deg, #3fbfff, #ce48ec, #e86a9c);
+  -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 
-.subtitle{
-  background: linear-gradient(to right, #02c8ff, #1bb43f); /* Example gradient */
-  -webkit-background-clip: text; /* For older browsers */
+
+.subtitle {
+  background: linear-gradient(90deg, #e96cff, #ad51e2, #515bd4);
+  -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+
+}
+
+
+
+/* Custom small scrollbar */
+.modal-scroll::-webkit-scrollbar {
+  width: 6px;   /* thinner width */
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+  background: transparent;  /* track is invisible */
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2); /* subtle white-ish thumb */
+  border-radius: 9999px;  /* pill shape */
+}
+
+.modal-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.4); /* darker on hover */
+}
+
+/* Firefox */
+.modal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+
+
+
+.animated-btn {
+  background: linear-gradient(270deg, #dd2a7b, #8134af, #515bd4);
+  background-size: 400% 400%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 1rem;
+}
+
+/* Animate gradient */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-btn {
+  animation: gradientShift 6s ease infinite;
+  box-shadow: 0 4px 15px rgba(129, 52, 175, 0.4);
+}
+
+/* Hover effect */
+.animated-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(221, 42, 123, 0.5);
 }

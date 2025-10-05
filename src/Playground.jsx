@@ -23,8 +23,8 @@ const Playground = () => {
         const validatedData = data.map(item => ({ ...item, type: item.type || 'image' }));
         setItems(validatedData);
       } catch (err) {
-        console.error("Failed to fetch playground data:", err);
-        setError("Oops! Couldn't load the playground experiments.");
+        console.error("Failed to fetch data:", err);
+        setError("Oops! Couldn't load the projects.");
       } finally { setLoading(false); }
     };
     fetchPlaygroundData();
@@ -51,7 +51,7 @@ const Playground = () => {
   // --- End of unchanged logic ---
 
 
-  if (loading) { return <p className="playground-message">Loading experiments...</p>; }
+  if (loading) { return <p className="playground-message">Loading Gallery...</p>; }
   if (error) { return <p className="playground-message">{error}</p>; }
 
   // --- UPDATED RETURN STATEMENT ---
@@ -87,7 +87,7 @@ const Playground = () => {
 
       {/* --- Page Title and Description (Aligned Center) --- */}
       <div className="text-center mb-12 pt-4"> {/* Added padding-top */}
-        <h1 className="text-[10vw]  font-bold mb-6 gradient-text">Playground</h1>
+        <h1 className="text-[10vw]  font-bold mb-6 gradient-text">GALLERY🍁</h1>
         {/*<p className="text-zinc-400 max-w-2xl mx-auto">
           A space where I try new ideas and have fun building things.<br/>
         </p>*/}
@@ -95,7 +95,7 @@ const Playground = () => {
 
       {/* --- Masonry Grid (Unchanged) --- */}
       {items.length === 0 ? (
-         <p className="playground-message">Nothing in the playground yet. Add items to /public/playground/playground.json!</p>
+         <p className="playground-message">Nothing in the Gallery yet. Add items to /public/playground/playground.json!</p>
       ) : (
          <Masonry
              breakpointCols={breakpointColumnsObj}
