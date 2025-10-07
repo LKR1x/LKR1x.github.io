@@ -146,13 +146,13 @@ const MainPageContent = () => {
           <div className="absolute animate-ticket-infinite flex whitespace-nowrap text-[22vw] sm:text-[12vw] font-bold tracking-wide mainpage-title text-white">
             <div className="flex gap-10 px-4">
               <span className="gif-text">✱UI/UX_DESIGNER</span>
-              <span className="gif-text">✱WEB_DEVELOPER</span>
+              <span className="gif-text">✱FRONTEND_DEVELOPER</span>
               <span className="gif-text">✱VISUAL_DESIGNER</span>
               <span className="gif-text">✱CREATIVE_DEVELOPER</span>
             </div>
             <div className="flex gap-10 px-4" aria-hidden="true">
               <span className="gif-text">✱UI/UX_DESIGNER</span>
-              <span className="gif-text">✱WEB_DEVELOPER</span>
+              <span className="gif-text">✱FRONTEND_DEVELOPER</span>
               <span className="gif-text">✱VISUAL_DESIGNER</span>
               <span className="gif-text">✱CREATIVE_DEVELOPER</span>
             </div>
