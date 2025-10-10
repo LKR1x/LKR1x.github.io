@@ -3,7 +3,7 @@ title: "Productive Browser Extension"
 description: "A case study on a browser extension designed for productivity."
 tags: ["Browser Extension", "Productivity", "JavaScript"]
 image: "/projects/images/freshtab.webp"
-date: "2025-08-05"
+date: "2025-06-05"
 ---
 
 
