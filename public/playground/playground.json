@@ -2,6 +2,18 @@
 
     {
       "type": "image",
+      "imagePath": "/playground/images/papilora.webp",
+      "description": "Vite + Tailwind + Framermotion landingpage",
+      "alt": "website"
+    },
+    {
+      "type": "video",
+      "videoPath": "/playground/videos/leafora.webm",
+      "description": "Website prototype adobeXD",
+      "alt": "website"
+    },
+    {
+      "type": "image",
       "imagePath": "/playground/images/nextmind.webp",
       "description": "Vite + Tailwind CSS landingpage",
       "alt": "website"

@@ -139,7 +139,7 @@ const MainPageContent = () => {
   // Return JSX for the main page content ONLY
   return (
     <>
-      <section className="relative w-full h-screen bg-black text-white overflow-hidden mt-0 pt-0">
+      <section className="relative w-full h-svh min-h-svh bg-black text-white overflow-hidden mt-0 pt-0">
 
         {/* Animated Text Slideshow (top, unchanged) */}
         <div className="relative overflow-hidden w-full h-[28vw] sm:h-[17vw] mb-20 z-40 p-0 m-0 lg:top-[-5%] xl:top-[-7%]">
