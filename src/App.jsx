@@ -7,7 +7,8 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import matter from 'gray-matter';
 // --- React Router Imports ---
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+// <-- MODIFIED: Added useParams and useNavigate -->
+import { BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate } from 'react-router-dom';
 
 // --- Import your new Playground component ---
 import Playground from './Playground'; // Assuming Playground.jsx is in the same src folder
@@ -63,6 +64,10 @@ const MainPageContent = () => {
   const [projects, setProjects] = useState([]);
   const [showAll, setShowAll] = useState(false);
 
+  // --- ADDED: React Router hooks ---
+  const { filename } = useParams(); // Gets 'filename' from URL (e.g., "my-project.md")
+  const navigate = useNavigate();   // Hook to programmatically change the URL
+
   // Project loading logic (using JSON manifest)
   useEffect(() => {
     const loadProjectsList = async () => {
@@ -114,9 +119,38 @@ const MainPageContent = () => {
     };
   }, [selectedProject]); // This effect runs every time the `selectedProject` state changes.
 
+  // --- ADDED: useEffect to open modal based on URL ---
+  useEffect(() => {
+    // If the URL has a 'filename' and our projects are loaded...
+    if (filename && projects.length > 0) {
+      // Find the project that matches the filename in the URL.
+      const projectToOpen = projects.find(p => p.filename === filename);
+      if (projectToOpen) {
+        setSelectedProject(projectToOpen); // Open the modal
+      } else {
+        // If project not found (e.g., bad link), go back to home.
+        console.warn(`Project not found: ${filename}`);
+        navigate('/', { replace: true });
+      }
+    }
+  }, [filename, projects, navigate]); // Re-run if filename or projects list changes
 
-  const openProjectModal = (project) => { setSelectedProject(project); };
-  const closeProjectModal = () => { setSelectedProject(null); };
+
+  // --- MODIFIED: openProjectModal now updates the URL ---
+  const openProjectModal = (project) => {
+    setSelectedProject(project);
+    // Use 'replace: true' so it doesn't add a new entry to browser history
+    // This feels more natural for a modal.
+    navigate(`/view/${project.filename}`, { replace: true });
+  };
+
+  // --- MODIFIED: closeProjectModal now navigates back to "/" ---
+  const closeProjectModal = () => {
+    setSelectedProject(null);
+    // Navigate back to the home URL
+    navigate('/', { replace: true });
+  };
+
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -141,6 +175,8 @@ const MainPageContent = () => {
     <>
       <section className="relative w-full h-svh min-h-svh bg-black text-white overflow-hidden mt-0 pt-0">
 
+        {/* ... (rest of your section 1 JSX, no changes needed) ... */}
+        
         {/* Animated Text Slideshow (top, unchanged) */}
         <div className="relative overflow-hidden w-full h-[28vw] sm:h-[17vw] mb-20 z-40 p-0 m-0 lg:top-[-5%] xl:top-[-7%]">
           <div className="absolute animate-ticket-infinite flex whitespace-nowrap text-[22vw] sm:text-[12vw] font-bold tracking-wide mainpage-title text-white">
@@ -254,6 +290,9 @@ const MainPageContent = () => {
         </div>
       )}
 
+      {/* ... (rest of your JSX: Playground link, About, Stack, Contact, Toast) ... */}
+      {/* ... No changes needed in the rest of the JSX ... */}
+      
       <Link to="/playground" className="block w-full mb-16 mt-10 cursor-pointer group px-4" id="playground">
         <div
           className="bg-zinc-900 rounded-xl border border-zinc-700 overflow-hidden square-card w-full h-[200px] sm:h-[250px] md:h-[350px] lg:h-[400px] mx-auto group-hover:border-green-500 transition-colors duration-300"
@@ -316,6 +355,7 @@ const MainPageContent = () => {
       </div>
       <br />
 
+
       {/* --- Toast Notification --- */}
       {toast.show && (
         <div className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-lg shadow-lg text-white font-medium transition-all duration-500 ${toast.type === "success" ? "bg-green-600" : "bg-red-600"}`} >
@@ -324,12 +364,14 @@ const MainPageContent = () => {
       )}
 
       {/* --- Render the Project Modal --- */}
+      {/* This modal will now open/close based on the URL! */}
       <ProjectModal project={selectedProject} onClose={closeProjectModal} />
     </>
   );
 };
 
 
+// --- Main App component now handles Routing ---
 // --- Main App component now handles Routing ---
 const App = () => {
   return (
@@ -339,11 +381,12 @@ const App = () => {
           {/* Route for the main page */}
           <Route path="/" element={<MainPageContent />} />
 
+          {/* --- MODIFIED: Changed the route to avoid conflict --- */}
+          <Route path="/view/:filename" element={<MainPageContent />} />
+
           {/* Route for the Playground page */}
           <Route path="/playground" element={<Playground />} />
 
-          {/* Optional: Add a 404 Not Found route later */}
-          {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
 
         {/* Footer is outside Routes to appear on all pages */}
