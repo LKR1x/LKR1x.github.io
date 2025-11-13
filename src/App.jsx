@@ -7,8 +7,8 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import matter from 'gray-matter';
 // --- React Router Imports ---
-// <-- MODIFIED: Added useParams and useNavigate -->
-import { BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate } from 'react-router-dom';
+// <-- THIS IS THE ONLY LINE YOU NEED TO CHANGE -->
+import { HashRouter as Router, Routes, Route, Link, useParams, useNavigate } from 'react-router-dom';
 
 // --- Import your new Playground component ---
 import Playground from './Playground'; // Assuming Playground.jsx is in the same src folder
@@ -340,7 +340,7 @@ const MainPageContent = () => {
       {/* --- Contact Me Section --- */}
       <div className="w-full mb-16 px-4 flex flex-col items-center" id="contact">
         <div className="w-full max-w-5xl flex flex-col md:flex-row gap-6">
-          <div className="md:w-1/3 w-full flex md:justify-start justify-center md:order-1 order-1"><h2 className="text-[7vw] font-bold text-center md:text-right text-zinc-100 subtitle">REACH<br />ME</h2></div>
+          <div className="md:w-1/3 w-full flex md:justify-start justify-center md:order-1 order-1"><h2 className="text-[7vw] font-bold text-center md:text-right text-zinc-1F00 subtitle">REACH<br />ME</h2></div>
           <div className="hidden md:flex w-px bg-zinc-700 md:order-2"></div>
           <div className="md:w-2/3 w-full flex justify-center md:order-3 order-2">
             <form ref={form} onSubmit={sendEmail} className="w-full max-w-xl flex flex-col gap-4" >
@@ -375,7 +375,8 @@ const MainPageContent = () => {
 // --- Main App component now handles Routing ---
 const App = () => {
   return (
-    <Router> {/* Wrap everything in the Router */}
+    // The "as Router" alias means this component is now a HashRouter
+    <Router> 
       <div className="min-h-screen bg-black text-white px-4 py-10 pb-0 font-sans scroll-smooth" id="home">
         <Routes> {/* Define the Routes */}
           {/* Route for the main page */}
