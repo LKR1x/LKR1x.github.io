@@ -20,10 +20,18 @@ const Footer = () => {
     { name: "Projects", link: "/#projects" },
   ];
 
-  // --- Best Practice Note (Keep as is) ---
-  // ... (Font Awesome note) ...
+  // <-- ADDED: Function to handle smooth scrolling for anchor links -->
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault(); // Stop the link from changing the URL hash
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
 
   // --- Conditionally render the footer ---
+  // This is correct: it only shows the footer on the main page.
   if (location.pathname !== '/') {
     return null; // If not on the home page, return nothing
   }
@@ -43,9 +51,9 @@ const Footer = () => {
           {/* Left - Email (Keep as is) */}
           <div className="md:text-left">
              <a href="mailto:lakruwaninguruwatte002@gmail.com" className="text-white inline-flex items-center gap-2 hover:text-green-400 transition-colors duration-300" >
-              Email
-              <i className="fas fa-arrow-up-right-from-square text-xs mt-1"></i>
-            </a>
+               Email
+               <i className="fas fa-arrow-up-right-from-square text-xs mt-1"></i>
+             </a>
           </div>
 
           {/* Center - Social Icons (Keep as is) */}
@@ -57,34 +65,22 @@ const Footer = () => {
             ))}
           </div>
 
-          {/* Right - Site Navigation (Conditional Rendering) */}
+          {/* <-- MODIFIED: Right - Site Navigation --> */}
           <nav className="flex w-full justify-center md:justify-end space-x-6">
             {navLinks.map((nav, index) => {
-              // --- Check if we are on the Home Page ---
-              if (location.pathname === '/') {
-                // --- If on Home, use simple <a> for same-page scroll ---
-                return (
-                  <a
-                    key={index}
-                    // Use the full nav.link here
-                    href={nav.link}
-                    className="hover:text-green-400 transition-colors duration-300"
-                  >
-                    {nav.name}
-                  </a>
-                );
-              } else {
-                // --- If NOT on Home, use <Link> to navigate back first ---
-                return (
-                  <Link
-                    key={index}
-                    to={nav.link} // Use the full "/#hash" path
-                    className="hover:text-green-400 transition-colors duration-300"
-                  >
-                    {nav.name}
-                  </Link>
-                );
-              }
+              // Get the section ID (e.g., "about") from the link (e.g., "/#about")
+              const sectionId = nav.link.split('#')[1];
+              
+              return (
+                <a
+                  key={index}
+                  href={nav.link} // Keep href for semantics
+                  onClick={(e) => scrollToSection(e, sectionId)} // Add onClick handler
+                  className="hover:text-green-400 transition-colors duration-300"
+                >
+                  {nav.name}
+                </a>
+              );
             })}
           </nav>
         </div>

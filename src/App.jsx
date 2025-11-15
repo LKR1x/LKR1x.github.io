@@ -7,7 +7,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import matter from 'gray-matter';
 // --- React Router Imports ---
-// <-- THIS IS THE ONLY LINE YOU NEED TO CHANGE -->
+// This is correct for GitHub Pages
 import { HashRouter as Router, Routes, Route, Link, useParams, useNavigate } from 'react-router-dom';
 
 // --- Import your new Playground component ---
@@ -22,7 +22,7 @@ const skills = [
   { name: "Figma", image: "/images/figma.png" },
   { name: "HTML", image: "/images/html.png" },
   { name: "Obsidian", image: "/images/obsidian.png" },
-  { name: "Photoshop", image: "/images/photoshop.png" },
+  { name:"Photoshop", image: "/images/photoshop.png" },
   { name: "Tailwind", image: "/images/tailwind.png" },
   { name: "Vite", image: "/images/vite.png" },
   { name: "VS-code", image: "/images/vscode.png" },
@@ -67,6 +67,15 @@ const MainPageContent = () => {
   // --- ADDED: React Router hooks ---
   const { filename } = useParams(); // Gets 'filename' from URL (e.g., "my-project.md")
   const navigate = useNavigate();   // Hook to programmatically change the URL
+  
+  // <-- ADDED: Function to handle smooth scrolling for anchor links -->
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault(); // Stop the link from changing the URL hash
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   // Project loading logic (using JSON manifest)
   useEffect(() => {
@@ -221,11 +230,11 @@ const MainPageContent = () => {
           </p>
         </div>
 
-        {/* Navbar aligned right */}
+        {/* <-- MODIFIED: Navbar links updated with onClick handler --> */}
         <div className="text-right space-y-2 md:flex-shrink-0">
-          <p><a href="#about" className="cursor-pointer hover:underline">About</a></p>
-          <p><a href="#projects" className="cursor-pointer hover:underline">Projects</a></p>
-          <p><a href="#contact" className="cursor-pointer hover:underline">Contact</a></p>
+          <p><a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="cursor-pointer hover:underline">About</a></p>
+          <p><a href="#projects" onClick={(e) => scrollToSection(e, 'projects')} className="cursor-pointer hover:underline">Projects</a></p>
+          <p><a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="cursor-pointer hover:underline">Contact</a></p>
         </div>
       </div>
 
@@ -310,7 +319,7 @@ const MainPageContent = () => {
       {/* --- About Me Section --- */}
       <div className="w-full mb-16 px-4 flex flex-col items-center" id="about">
         <div className="w-full max-w-5xl flex flex-col md:flex-row gap-6">
-          <div className="md:w-1/3 w-full flex md:justify-start justify-center"><h2 className="text-[7vw]  font-bold text-center md:text-right  text-zinc-100 subtitle">ABOUT<br />ME</h2></div>
+          <div className="md:w-1Digital/3 w-full flex md:justify-start justify-center"><h2 className="text-[7vw]  font-bold text-center md:text-right  text-zinc-100 subtitle">ABOUT<br />ME</h2></div>
           <div className="hidden md:flex w-px bg-zinc-700"></div>
           <div className="md:w-2/3 w-full flex justify-center items-center"><p className="text-lg md:text-xl leading-relaxed text-zinc-300 text-left md:text-left">Hi, I’m Lakruwan, an undergraduate at the University of Colombo (B.ICT, since 2022) with a passion for creative tech. I'm deeply into crafting engaging user experiences, visual storytelling, and innovative digital designs. While UI/UX is my sweet spot, I explore every corner of the creative and tech space blending imagination with functionality to build things that both impress and work beautifully.
           </p></div>
@@ -340,7 +349,7 @@ const MainPageContent = () => {
       {/* --- Contact Me Section --- */}
       <div className="w-full mb-16 px-4 flex flex-col items-center" id="contact">
         <div className="w-full max-w-5xl flex flex-col md:flex-row gap-6">
-          <div className="md:w-1/3 w-full flex md:justify-start justify-center md:order-1 order-1"><h2 className="text-[7vw] font-bold text-center md:text-right text-zinc-1F00 subtitle">REACH<br />ME</h2></div>
+          <div className="md:w-1/3 w-full flex md:justify-start justify-center md:order-1 order-1"><h2 className="text-[7vw] font-bold text-center md:text-right text-zinc-100 subtitle">REACH<br />ME</h2></div>
           <div className="hidden md:flex w-px bg-zinc-700 md:order-2"></div>
           <div className="md:w-2/3 w-full flex justify-center md:order-3 order-2">
             <form ref={form} onSubmit={sendEmail} className="w-full max-w-xl flex flex-col gap-4" >
