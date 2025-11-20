@@ -319,13 +319,14 @@ const MainPageContent = () => {
       {/* --- About Me Section --- */}
       <div className="w-full mb-16 px-4 flex flex-col items-center" id="about">
         <div className="w-full max-w-5xl flex flex-col md:flex-row gap-6">
-          <div className="md:w-1Digital/3 w-full flex md:justify-start justify-center"><h2 className="text-[7vw]  font-bold text-center md:text-right  text-zinc-100 subtitle">ABOUT<br />ME</h2></div>
+          <div className="md:w-1/3 w-full flex md:justify-start justify-center"><h2 className="text-[7vw]  font-bold text-center md:text-right  text-zinc-100 subtitle">ABOUT<br />ME</h2></div>
           <div className="hidden md:flex w-px bg-zinc-700"></div>
           <div className="md:w-2/3 w-full flex justify-center items-center"><p className="text-lg md:text-xl leading-relaxed text-zinc-300 text-left md:text-left">Hi, I’m Lakruwan, an undergraduate at the University of Colombo (B.ICT, since 2022) with a passion for creative tech. I'm deeply into crafting engaging user experiences, visual storytelling, and innovative digital designs. While UI/UX is my sweet spot, I explore every corner of the creative and tech space blending imagination with functionality to build things that both impress and work beautifully.
           </p></div>
         </div>
       </div>
       <br />
+
 
       {/* --- My Stack Section --- */}
       <div className="w-full mb-16 px-4 flex flex-col items-center">
